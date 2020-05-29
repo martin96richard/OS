@@ -1,0 +1,6 @@
+./modify.sh -u -r filestest/
+tree
+./modify.sh -l -r filestest/
+tree
+./modify.sh -u filestest/file1 's/fi/if/'
+tree
