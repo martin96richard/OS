@@ -1,0 +1,9 @@
+Memory Management
+
+A default page occur when there is no physical page (frame) mapped to a virtual page.
+I noticed that each memory range represents 16666 addresses in decimal. Page fault occurs when I try to read virtual pages larger than 31.
+For example, if i want to read on the virtual page 32 (which is not mapped) i read the address 533312 (32 * 16666), then a page fault occurs.
+I've tried to map the 8 pages of physical memory to the first 8 pages of virtual memory.
+After this i've tried to READ the virtual page 8 (so with addr : 133328), i noticed that there is no page fault.
+This is because the first 32 virtual pages have been mapped to physical pages by default.
+So I noticed that the replacement algorithm used in this program is FIFO (First In First Out). Because page faults occur sequentially.
